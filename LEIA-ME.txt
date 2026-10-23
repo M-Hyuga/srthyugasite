@@ -1,0 +1,28 @@
+SRT. HYUGA — PRIMEIRA VERSÃO DO SITE
+
+COMO ABRIR
+1. Extraia a pasta srt-hyuga-site do arquivo ZIP.
+2. Abra o arquivo index.html no navegador. Para editar o projeto, abra a pasta no VS Code.
+3. Os arquivos principais são index.html, styles.css e script.js.
+
+PÁGINAS INCLUÍDAS
+- index.html: página inicial
+- escritos.html: arquivo de textos com busca
+- posts/nao-sou-uma-pessoa-tranquila.html: página de leitura integral do texto
+- categorias.html: diretório de categorias
+- sobre.html: apresentação do projeto
+
+RECURSOS FUNCIONAIS
+- Layout responsivo para computador e celular
+- Busca local nos itens que aparecem no arquivo/página atual
+- Alternância entre tema escuro e claro, salva no navegador
+- Botão para salvar/retirar dos salvos o texto aberto (armazenado no navegador)
+- Controles de tamanho da fonte na página de leitura
+- Navegação entre as páginas
+
+OBSERVAÇÕES
+- O texto “Não sou uma pessoa tranquila” foi transcrito da publicação pública compartilhada pela autora, preservando a grafia e a estrutura do texto exibido na página pública consultada. Revise a transcrição no navegador antes de publicar a versão definitiva.
+- A arte do cabeçalho original foi incluída em assets/cabecalho.png. A imagem assets/arte-srthyuga.png é usada como avatar/arte lateral.
+- A busca e os textos são estáticos: para adicionar um novo post, será necessário criar a página HTML e adicionar seu cartão em index.html e escritos.html. Ainda não há painel administrativo nem banco de dados.
+- A fonte externa Playfair Display/DM Sans carrega do Google Fonts; se estiver sem internet, o site usa fontes de reserva.
+- Esta versão é independente do Blogger e não altera nem publica nada no blog existente.

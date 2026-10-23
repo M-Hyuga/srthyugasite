@@ -1,0 +1,21 @@
+BIBLIOTECA VIRTUAL — SRT. HYUGA
+
+O que foi acrescentado
+- Módulo biblioteca/ com página inicial, catálogo, detalhe da obra e índice de autores.
+- Busca por título, autor e assunto; filtro por categoria; ordenação por título, autor e ano.
+- O acesso Biblioteca foi adicionado à navegação existente.
+- Na página inicial, a linha rápida “Vida cotidiana” foi substituída por “Biblioteca Virtual”, e o destaque genérico de categorias foi substituído por um destaque para a biblioteca. A página Categorias e os demais textos foram preservados.
+
+Estrutura
+- biblioteca/index.html: entrada e catálogo
+- biblioteca/livro.html?id=...: detalhes da obra
+- biblioteca/autores.html: índice de autores
+- biblioteca/livros.js: dados do catálogo
+- biblioteca/biblioteca.js: busca, filtro, ordenação e renderização
+- biblioteca/biblioteca.css: estilos exclusivos do módulo
+
+Observações
+- O catálogo inicial contém Dom Casmurro, O Alienista, As Aventuras de Sherlock Holmes e Frankenstein.
+- Os botões levam ao Portal Domínio Público para localizar a obra; nenhum livro é hospedado neste projeto.
+- Direitos autorais devem ser conferidos por edição: traduções, notas, prefácios e ilustrações podem ter proteção própria.
+- Para testar, extraia a pasta e abra index.html. A busca de livros funciona localmente no navegador.
