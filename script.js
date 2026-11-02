@@ -48,7 +48,7 @@
   const saveButton = document.getElementById('save-post');
   if (saveButton) {
     const key = 'srt-hyuga-saved-posts';
-    const slug = 'nao-sou-uma-pessoa-tranquila';
+    const slug = document.body.dataset.postSlug || 'nao-sou-uma-pessoa-tranquila';
     const getSaved = () => { try { return JSON.parse(localStorage.getItem(key) || '[]'); } catch { return []; } };
     function refreshSaved() {
       const saved = getSaved().includes(slug);

@@ -1,0 +1,69 @@
+media:
+  input: assets/posts
+  output: /assets/posts
+  categories: [image]
+  extensions: [jpg, jpeg, png, gif, webp]
+  rename: safe
+
+content:
+  - name: posts
+    label: Escritos
+    type: collection
+    path: _posts
+    format: yaml-frontmatter
+    filename:
+      template: "{fields.date}-{fields.slug}.html"
+      field: create
+    view:
+      primary: title
+      sort: date
+      order: desc
+      fields: [title, date, category]
+    fields:
+      - name: title
+        label: Título
+        type: string
+        required: true
+      - name: slug
+        label: Nome do link
+        type: string
+        required: true
+        pattern: "^[a-z0-9-]+$"
+        description: "Use letras minúsculas, números e hífens. Exemplo: meu-novo-texto"
+      - name: date
+        label: Data
+        type: date
+        required: true
+      - name: category
+        label: Categoria
+        type: select
+        required: true
+        options:
+          values: [Reflexões, Vida cotidiana, Desenhos, Indicações literárias]
+      - name: summary
+        label: Resumo
+        type: text
+        required: true
+      - name: cover
+        label: Imagem de capa
+        type: image
+        options:
+          path: .
+          extensions: [jpg, jpeg, png, gif, webp]
+      - name: cover_alt
+        label: Descrição da imagem
+        type: string
+      - name: pullquote
+        label: Trecho em destaque
+        type: text
+      - name: reading_time
+        label: Tempo de leitura em minutos
+        type: number
+      - name: body
+        label: Texto completo
+        type: rich-text
+        options:
+          format: html
+          media: false
+          switcher: false
+

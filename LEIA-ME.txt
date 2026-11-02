@@ -1,28 +1,33 @@
-SRT. HYUGA — PRIMEIRA VERSÃO DO SITE
+SRT. HYUGA — PUBLICAÇÃO DE ESCRITOS
 
-COMO ABRIR
-1. Extraia a pasta srt-hyuga-site do arquivo ZIP.
-2. Abra o arquivo index.html no navegador. Para editar o projeto, abra a pasta no VS Code.
-3. Os arquivos principais são index.html, styles.css e script.js.
+COMO ADICIONAR UM TEXTO
+1. Abra https://app.pagescms.org e entre com sua conta GitHub.
+2. Instale o Pages CMS com acesso somente ao repositório srthyugasite.
+3. Abra o repositório. O arquivo .pages.yml configura os campos de publicação.
+4. Em Escritos, crie um novo texto e preencha título, nome do link, data,
+   categoria, resumo, imagem de capa, trecho em destaque e texto completo.
+5. Salve a publicação. O Pages CMS grava as alterações no GitHub.
+6. O GitHub Pages publica a atualização no mesmo endereço do site.
 
-PÁGINAS INCLUÍDAS
-- index.html: página inicial
-- escritos.html: arquivo de textos com busca
-- posts/nao-sou-uma-pessoa-tranquila.html: página de leitura integral do texto
-- categorias.html: diretório de categorias
-- sobre.html: apresentação do projeto
+O QUE FOI PREPARADO
+- A página inicial mostra automaticamente os textos mais recentes.
+- A página Escritos lista automaticamente todos os textos publicados.
+- Cada texto ganha uma página de leitura com o mesmo visual do site.
+- Os três textos que já existiam foram mantidos como posts editáveis.
+- Imagens novas ficam em assets/posts.
 
-RECURSOS FUNCIONAIS
-- Layout responsivo para computador e celular
-- Busca local nos itens que aparecem no arquivo/página atual
-- Alternância entre tema escuro e claro, salva no navegador
-- Botão para salvar/retirar dos salvos o texto aberto (armazenado no navegador)
-- Controles de tamanho da fonte na página de leitura
-- Navegação entre as páginas
+IMPORTANTE
+- O primeiro passo é substituir os arquivos do repositório pela versão preparada
+  e enviar essa atualização ao GitHub.
+- A configuração assume que o endereço publicado inclui /srthyugasite no final.
+  Confira Settings > Pages no GitHub. Se o endereço usar domínio próprio ou não
+  tiver esse trecho, ajuste baseurl em _config.yml antes de enviar.
+- Ao instalar o Pages CMS, escolha acesso somente ao repositório do site.
+- A publicação automática depende do GitHub Pages estar ativado para o branch
+  principal e pasta raiz, conforme a configuração atual do repositório.
 
-OBSERVAÇÕES
-- O texto “Não sou uma pessoa tranquila” foi transcrito da publicação pública compartilhada pela autora, preservando a grafia e a estrutura do texto exibido na página pública consultada. Revise a transcrição no navegador antes de publicar a versão definitiva.
-- A arte do cabeçalho original foi incluída em assets/cabecalho.png. A imagem assets/arte-srthyuga.png é usada como avatar/arte lateral.
-- A busca e os textos são estáticos: para adicionar um novo post, será necessário criar a página HTML e adicionar seu cartão em index.html e escritos.html. Ainda não há painel administrativo nem banco de dados.
-- A fonte externa Playfair Display/DM Sans carrega do Google Fonts; se estiver sem internet, o site usa fontes de reserva.
-- Esta versão é independente do Blogger e não altera nem publica nada no blog existente.
+ARQUIVOS DE CONTEÚDO
+- _posts/: textos e campos que o editor do Pages CMS altera.
+- _layouts/post.html: modelo usado para exibir cada texto.
+- .pages.yml: campos apresentados no editor e pasta das imagens enviadas.
+- _config.yml: configuração do Jekyll/GitHub Pages e endereço-base do site.

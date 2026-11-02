@@ -1,0 +1,16 @@
+title: Srt. Hyuga
+baseurl: /srthyugasite
+permalink: /posts/:title.html
+markdown: kramdown
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - LEIA-ME.txt
+  - LEIA-ME-BIBLIOTECA.txt
+
