@@ -1,3 +1,5 @@
+---
+---
 <!doctype html>
 <html lang="pt-BR">
   
@@ -77,83 +79,18 @@
         
           <div id="search-feedback" class="search-feedback" aria-live="polite"></div>
           
-        <article class="featured-post searchable" data-title="teste" data-category="reflexões" data-description="Um texto sobre dias difíceis, culpa, ausência e a complexidade dos vínculos afetivos."><!--aqui começa a do texto 03-->
-
-              <!--imagem que vai na "capa de apresentação"-->
-            <a class="featured-image" href="#" aria-label="Ler ...">
-              <img src="assets/avocatorefle.jpg" alt="desenho do artista avocato"> <!--imagem que vai na "capa de apresentação"-->
-            </a>
-            <div class="featured-copy"><span class="tag">Reflexões</span> 
-            
-              <!--Titulo do texto-->
-              <h3><a href="posts/sinto-enao-queria-entender-o-que-sinto.html">Sobre não querer entender, tarde demais..</a> </h3>
-            
-              <!--data de públicação-->
-              <p class="post-meta"><time datetime="2026-08-07">07 de agosto de 2026</time> <span>·</span> 2 min de leitura</p> 
-            
-              <!--detalhes sobre o texto-->
-              <p>Minha consciencia me pertubando...</p> 
-           
-              <!--link para o texto-->
-              <a class="read-link" href="posts/sinto-enao-queria-entender-o-que-sinto.html">Continuar lendo <span aria-hidden="true">→</span></a>
-       
-            </div>
-          
-        </article><!--aqui termina a do texto 03-->
-       
-      
-          <div id="search-feedback" class="search-feedback" aria-live="polite"></div> 
-          
-        <article class="featured-post searchable" data-title="O buraco é beeem mais embaixo" data-category="reflexões" data-description="Um texto sobre dias difíceis, culpa, ausência e a complexidade dos vínculos afetivos."><!--aqui começa a do texto 02-->
-
-              <!--imagem que vai na "capa de apresentação"-->
-            <a class="featured-image" href="posts/o-buraco-e-beeem-mais-embaixo.html" aria-label="Ler O buraco é beeem mais embaixo">
-              <img src="assets/wanda1.gif" alt="Wanda feiticeira escarlate"> <!--imagem que vai na "capa de apresentação"-->
-            </a>
-            <div class="featured-copy"><span class="tag">Reflexões</span> 
-            
-              <!--Titulo do texto-->
-              <h3><a href="posts/o-buraco-e-beeem-mais-embaixo.html">O buraco é beeem mais embaixo</a> </h3>
-            
-              <!--data de públicação-->
-              <p class="post-meta"><time datetime="2026-10-30">30 de outubro de 2026</time> <span>·</span> 2 min de leitura</p> 
-            
-              <!--detalhes sobre o texto-->
-              <p>Um texto sobre dias difíceis, culpa, ausência e a complexidade dos vínculos afetivos.</p> 
-           
-              <!--link para o texto-->
-              <a class="read-link" href="posts/o-buraco-e-beeem-mais-embaixo.html">Continuar lendo <span aria-hidden="true">→</span></a>
-       
-            </div>
-          
-        </article><!--aqui termina a do texto 02-->
-
-        
-        <article class="featured-post searchable" data-title="Não sou uma pessoa tranquila" data-category="reflexões" data-description="Um texto pessoal sobre intensidade, autocontrole e autoconhecimento."><!--aqui começa a do texto 01-->
-
-            <!--imagem que vai na "capa de apresentação"-->
-            <a class="featured-image" href="posts/nao-sou-uma-pessoa-tranquila.html" aria-label="Ler Não sou uma pessoa tranquila">
-              <img src="assets/homemaranhadofilmenovo.jpg" alt="transformação homem aranha do novo filme.">
-            </a>
-          
-            <div class="featured-copy"><span class="tag">Reflexões</span>
-
-              <!--Titulo do texto-->
-              <h3><a href="posts/nao-sou-uma-pessoa-tranquila.html">Não sou uma pessoa tranquila</a></h3>
-
-              <!--data de públicação-->
-              <p class="post-meta"><time datetime="2026-08-07">07 de agosto de 2026</time><span>·</span> 2 min de leitura</p>
-
-              <!--detalhes sobre o texto-->
-              <p>Não sou calma. Não sou delicada. Sou uma fera prestes a rasgar qualquer um em pedacinhos...</p>
-
-              <!--link para o texto-->
-              <a class="read-link" href="posts/nao-sou-uma-pessoa-tranquila.html">Continuar lendo <span aria-hidden="true">→</span></a>
-            
-            </div>
-
-        </article><!--aqui termina a do texto 01-->
-
+        {% assign recent_posts = site.posts | sort: "date" | reverse %}
+        {% for post in recent_posts limit: 3 %}
+        <article class="featured-post searchable" data-title="{{ post.title | escape }}" data-category="{{ post.category | escape }}" data-description="{{ post.summary | escape }}">
+          {% if post.cover %}<a class="featured-image" href="{{ post.url | relative_url }}" aria-label="Ler {{ post.title | escape }}"><img src="{{ post.cover | relative_url }}" alt="{{ post.cover_alt | default: post.title | escape }}"></a>{% endif %}
+          <div class="featured-copy"><span class="tag">{{ post.category | escape }}</span>
+            <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+            <p class="post-meta"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d/%m/%Y" }}</time> <span>·</span> {{ post.reading_time | default: 2 }} min de leitura</p>
+            <p>{{ post.summary | escape }}</p>
+            <a class="read-link" href="{{ post.url | relative_url }}">Continuar lendo <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        {% endfor %}
         <div class="small-note"><span aria-hidden="true">✦</span>
           
          <p>Este espaço está em construção. Aos poucos, novos escritos vão encontrar seu lugar por aqui.</p>
@@ -184,7 +121,7 @@
           <a href="categorias.html" class="text-link">Ver todas →</a>
             
         </div>
-          <a class="category-row" href="categorias.html#reflexoes"><span>✧</span> Reflexões <small>03</small></a>
+          <a class="category-row" href="categorias.html#reflexoes"><span>✧</span> Reflexões <small>{{ site.categories["Reflexões"].size }}</small></a>
           <a class="category-row" href="biblioteca/index.html"><span>▥</span> Biblioteca Virtual <small>novo</small></a>
           <a class="category-row" href="categorias.html#desenhos"><span>✎</span> Desenhos <small>—</small></a>
           <a class="category-row" href="categorias.html#literatura"><span>▤</span> Indicações literárias <small>—</small></a>
@@ -230,3 +167,4 @@
 </body>
 
 </html>
+

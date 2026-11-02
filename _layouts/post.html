@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ page.summary | escape }}">
+    <title>{{ page.title | escape }} — Srt. Hyuga</title>
+    <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
+    <script src="{{ '/script.js' | relative_url }}" defer></script>
+</head>
+<body class="reading-page" data-post-slug="{{ page.slug | escape }}">
+    <a class="skip-link" href="#article-content">Pular para o texto</a>
+    <aside class="sidebar" aria-label="Navegação principal">
+        <a class="brand-mini" href="{{ '/' | relative_url }}" aria-label="Srt. Hyuga — início">
+            <img src="{{ '/assets/arte-srthyuga.png' | relative_url }}" alt="Arte de uma guerreira com capa vermelha">
+            <span>SRT. HYUGA</span>
+        </a>
+        <nav class="side-nav">
+            <a href="{{ '/' | relative_url }}"><span aria-hidden="true">⌂</span> Início</a>
+            <a class="active" href="{{ '/escritos.html' | relative_url }}"><span aria-hidden="true">▤</span> Escritos</a>
+            <a href="{{ '/biblioteca/index.html' | relative_url }}"><span aria-hidden="true">▥</span> Biblioteca</a>
+            <a href="{{ '/categorias.html' | relative_url }}"><span aria-hidden="true">◇</span> Categorias</a>
+            <a href="{{ '/sobre.html' | relative_url }}"><span aria-hidden="true">♙</span> Sobre</a>
+        </nav>
+        <div class="sidebar-note"><span class="sprig" aria-hidden="true">❧</span><p>Grandes ideias também nascem em dias comuns.</p><i></i></div>
+        <div class="sidebar-bottom"><a href="{{ '/sobre.html' | relative_url }}" aria-label="Sobre o blog">✉</a><a href="{{ '/escritos.html' | relative_url }}" aria-label="Explorar escritos">✧</a></div>
+    </aside>
+
+    <main class="site-main" id="article-content">
+        <header class="article-hero">
+            <div class="hero-tools">
+                <label class="search-box"><span aria-hidden="true">⌕</span><input id="global-search" type="search" placeholder="Buscar no blog..." aria-label="Buscar no blog"></label>
+                <button class="icon-button" id="theme-toggle" type="button" aria-label="Alternar tema">☾</button>
+            </div>
+            <a class="hero-wordmark" href="{{ '/' | relative_url }}">Srt. Hyuga</a>
+            <p class="hero-quote">{{ page.title | escape }}</p>
+        </header>
+
+        <section class="paper-panel article-layout">
+            <article class="article-body">
+                <nav class="breadcrumbs" aria-label="Você está aqui">
+                    <a href="{{ '/' | relative_url }}">Início</a><span>›</span>
+                    <a href="{{ '/escritos.html' | relative_url }}">Escritos</a><span>›</span>
+                    <span>{{ page.title | escape }}</span>
+                </nav>
+                <span class="tag">{{ page.category | escape }}</span>
+                <h1>{{ page.title | escape }}</h1>
+                <div class="article-meta">
+                    <span>▦ <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d/%m/%Y" }}</time></span>
+                    <span>◷ {{ page.reading_time | default: 2 }} min de leitura</span>
+                    <button id="save-post" class="plain-action" type="button" aria-pressed="false">♧ <span>Salvar</span></button>
+                    <div class="font-controls" aria-label="Tamanho do texto">
+                        <span>Texto</span><button type="button" data-font="down" aria-label="Diminuir fonte">A−</button>
+                        <button type="button" data-font="reset" aria-label="Fonte padrão">A</button><button type="button" data-font="up" aria-label="Aumentar fonte">A+</button>
+                    </div>
+                </div>
+                {% if page.cover %}<figure class="article-cover"><img src="{{ page.cover | relative_url }}" alt="{{ page.cover_alt | default: page.title | escape }}"></figure>{% endif %}
+                {% if page.pullquote %}<blockquote class="article-pullquote">“{{ page.pullquote | escape }}”</blockquote>{% endif %}
+                <div class="prose" id="prose">{{ content }}</div>
+                <p class="signature">Srt_Hyuga</p>
+                <div class="article-tags"><span>Etiqueta:</span><a href="{{ '/categorias.html' | relative_url }}#reflexoes">{{ page.category | downcase | escape }}</a></div>
+                <div class="post-navigation"><a href="{{ '/escritos.html' | relative_url }}"><span>← Arquivo</span><strong>Todos os escritos</strong></a><a href="{{ '/categorias.html' | relative_url }}"><span>Explorar →</span><strong>Categorias</strong></a></div>
+            </article>
+            <aside class="article-rail">
+                <section class="rail-card about-card"><p class="eyebrow rust">POR TRÁS DAS PALAVRAS</p><h3>Sobre o blog</h3><p>Um espaço para meus escritos, curiosidades e aprendizados. Aqui compartilho um pouco do que penso, do que sinto e do que me inspira.</p><a href="{{ '/sobre.html' | relative_url }}" class="text-link">Conhecer o espaço →</a></section>
+                <section class="rail-card related-card"><p class="eyebrow rust">CONTINUE EXPLORANDO</p><h3>Mais escritos</h3><p>Encontre outros textos no arquivo de escritos.</p><a href="{{ '/escritos.html' | relative_url }}" class="read-link">Voltar ao arquivo →</a></section>
+            </aside>
+        </section>
+        <footer class="site-footer"><a class="footer-brand" href="{{ '/' | relative_url }}">Srt. Hyuga</a><p>“Arranque toda a minha roupa e ainda não poderá ver o que sou.”<br><span>— Charlie Barkley</span></p><div class="footer-links"><a href="{{ '/' | relative_url }}">Início</a><a href="{{ '/escritos.html' | relative_url }}">Escritos</a><a href="{{ '/sobre.html' | relative_url }}">Sobre</a></div><span class="copyright">Feito para guardar palavras.</span></footer>
+    </main>
+</body>
+</html>
