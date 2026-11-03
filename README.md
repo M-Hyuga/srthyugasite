@@ -1,3 +1,3 @@
 # Srt. Hyuga
 
-Site autoral com publicações gerenciadas pelo Pages CMS. Para instruções de instalação e publicação, consulte [LEIA-ME.txt](LEIA-ME.txt).
+Vai uma dose de crise existencial ai?
